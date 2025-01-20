@@ -1,0 +1,28 @@
+# Classes to be tested
+classes:
+  - /^role::/
+  
+# Nodes to tests classes on, this refers to a 'factset' or 'nodeset'
+# depending on whether you are running 'spec' or 'acceptance' tests
+nodes:
+  - Ubuntu-14.04-32
+  - Amazon-2018.03
+  - Ubuntu-12.04-64
+  - Ubuntu-18.04-64
+  - Ubuntu-14.04-64
+  - Debian-7.8-32
+  - Debian-6.0.10-64
+  - Debian-6.0.10-32
+  - Ubuntu-12.04-32
+  - Debian-7.8-64
+
+# You can group classes here to save typing
+class_groups:
+
+test_matrix:
+  - all_nodes:
+      classes: 'all_classes'
+      tests: 'spec'
+  - all_nodes:
+      classes: 'all_classes'
+      tests: 'acceptance'

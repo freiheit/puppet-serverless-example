@@ -1,0 +1,10 @@
+#!/bin/sh
+mkdir -m 0700 -p /var/backups/openldap
+cd /var/backups/openldap
+
+rm -f slapcat.1.gz
+mv slapcat.gz slapcat.1.gz
+slapcat | gzip -c > slapcat.gz
+
+chmod 0600 *
+
